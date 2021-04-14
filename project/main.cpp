@@ -11,12 +11,7 @@ int main(int argc, char** argv) {
     recognizer::Recognizer map_recognizer(image);
 
     recognizer::GameMap mp = std::move(map_recognizer.RecognizeMap());
-    for (auto & x : mp) {
-        for (auto & y : x) {
-            std::cout << y;
-        }
-        std::cout << std::endl;
-    }
+    
     image.DrawWinLineAndSave(
         mp,
         output_file,
