@@ -1,9 +1,11 @@
 #include <iostream>
 #include "recognizer.h"
 
-int main() {
-
-    vh::LodeImageAdaptor image("/home/vh/Apply1C/input/test2.png");
+int main(int argc, char** argv) {
+    assert(argc == 3);
+    std::string input_file(argv[1]);
+    std::string output_file(argv[2]);
+    vh::LodeImageAdaptor image(input_file);
     image.Load();
 
     recognizer::Recognizer map_recognizer(image);
@@ -17,7 +19,7 @@ int main() {
     }
     image.DrawWinLineAndSave(
         mp,
-        "/home/vh/Apply1C/input/out2.png",
+        output_file,
         map_recognizer.GetTop(),
         map_recognizer.GetLeft(),
         map_recognizer.GetSquareSize()
