@@ -111,9 +111,9 @@ namespace vh {
         void DrawLine(size_t x, size_t y, size_t length, size_t width) {
             for (size_t i = x; i < x + width; ++i) {
                 for (size_t j = y; j < y + length; ++j) {
+                   image_[i * width_ * 4 + j * 4] = 255;
                    image_[i * width_ * 4 + j * 4 + 1] = 0;
                    image_[i * width_ * 4 + j * 4 + 2] = 0;
-                   image_[i * width_ * 4 + j * 4 + 3] = 0;
                 }
             }
         }
